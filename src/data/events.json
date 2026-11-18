@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Street Food Night Market",
+    "category": "Food",
+    "date": "2026-11-20",
+    "location": "Pune",
+    "price": 0,
+    "tags": ["Free", "Social"],
+    "image": "/images/event-1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Neon Pulse: Midnight Synthwave",
+    "category": "Music",
+    "date": "2026-11-27",
+    "location": "Mumbai",
+    "price": 1499,
+    "tags": ["Live", "Night"],
+    "image": "/images/event-2.jpg"
+  }
+]

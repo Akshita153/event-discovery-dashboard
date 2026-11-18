@@ -1,0 +1,3 @@
+export default function Tag({ label }: { label: string }) {
+  return <span className='rounded-full bg-ink/5 px-3 py-1 text-xs'>#{label}</span>
+}

@@ -1,3 +1,17 @@
+import eventsData from './data/events.json'
+import type { EventItem } from './types/event'
+import EventCard from './components/events/EventCard'
+
+const events = eventsData as EventItem[]
+
 export default function App() {
-  return <h1 className='p-8 text-3xl font-bold text-indigo-600'>It works</h1>
+  return (
+    <main className='p-8'>
+      <div className='grid max-w-3xl grid-cols-2 gap-6'>
+        {events.map((e) => (
+          <EventCard key={e.id} event={e} />
+        ))}
+      </div>
+    </main>
+  )
 }

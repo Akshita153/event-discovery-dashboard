@@ -1,2 +1,18 @@
 @import 'tailwindcss';
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --color-ink: #0b1f12;
+  --color-brand: #0a5c2a;
+  --color-lime: #c4ec54;
+  --color-paper: #f8f8f2;
+  --color-card: #fdfdf9;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
