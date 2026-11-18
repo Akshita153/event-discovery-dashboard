@@ -4,7 +4,7 @@
     "title": "Street Food Night Market",
     "category": "Food",
     "date": "2026-11-20",
-    "location": "Pune",
+    "location": "F.C Road,Pune",
     "price": 0,
     "tags": ["Free", "Social"],
     "image": "/images/event-1.jpg"
@@ -14,9 +14,110 @@
     "title": "Neon Pulse: Midnight Synthwave",
     "category": "Music",
     "date": "2026-11-27",
-    "location": "Mumbai",
+    "location": "Powai,Mumbai",
     "price": 1499,
     "tags": ["Live", "Night"],
     "image": "/images/event-2.jpg"
-  }
+  },
+    {
+        "id": 3,
+        "title": "Farm-to-Table Cooking Lab",
+        "category": "Food",
+        "date": "2026-11-22",
+        "location": "The Green Kitchen, Pune",
+        "price": 1200,
+        "tags": ["Workshop", "Hands-on"],
+        "image": "/images/event-3.jpg"
+    },
+    {
+            "id": 4,
+            "title": "Design Systems Summit 2026",
+            "category": "Tech",
+            "date": "2026-11-24",
+            "location": "Jio World Centre, Mumbai",
+            "price": 3999,
+            "tags": ["Conference", "UX"],
+            "image": "/images/event-4.jpg"
+    },
+    {
+            "id": 5,
+            "title": "Rooftop Sundowner Social",
+            "category": "Nightlife",
+            "date": "2026-11-28",
+            "location": "Skye Lounge, Bengaluru",
+            "price": 0,
+            "tags": ["Free", "Social"],
+            "image": "/images/event-5.jpg"
+    },
+    {
+            "id": 6,
+            "title": "Colour & Canvas Open Studio'",
+            "category": "Art",
+            "date": "2026-12-02",
+            "location": "Kala Ghoda, Mumbai",
+            "price": 0,
+            "tags": ["Free", "Exhibition"],
+            "image": "/images/event-6.jpg"
+    },
+    {
+            "id": 7,
+            "title": "Monsoon Folk Festival",
+            "category": "Music",
+            "date": "2026-12-05",
+            "location": "Jawaharlal Nehru Stadium, Delhi",
+            "price": 899,
+            "tags": ["Festival", "Outdoor"],
+            "image": "/images/event-7.jpg"
+    },
+    {
+            "id": 8,
+            "title": "City Half Marathon",
+            "category": "Sports",
+            "date": "2026-12-13",
+            "location": "Marine Drive, Mumbai",
+            "price": 0,
+            "tags": ["Free", "Fitness"],
+            "image": "/images/event-8.jpg"
+    },
+    {
+            "id": 9,
+            "title": "Founders After Dark: Pitch Night",
+            "category": "Tech",
+            "date": "2026-12-18",
+            "location": "91springboard, Bengaluru",
+            "price": 499,
+            "tags": ["Startups", "Networking"],
+            "image": "/images/event-9.jpg"
+    },
+    {
+            "id": 10,
+            "title": "New Year's Eve Glow Party",
+            "category": "Nightlife",
+            "date": "2026-12-31",
+            "location": "Tito's Lane, Goa",
+            "price": 2999,
+            "tags": ["Party", "NYE"],
+            "image": "/images/event-10.jpg"
+    },
+    {
+            "id": 11,
+            "title": "Arena Rock Live: The Echoes",
+            "category": "Music",
+            "date": "2026-01-10",
+            "location": "NSCI Dome, Mumbai",
+            "price": 2499,
+            "tags": ["Live", "Rock"],
+            "image": "/images/event-11.jpg"
+    },
+    {
+            "id": 12,
+            "title": "Product Leaders Roundtable",
+            "category": "Tech",
+            "date": "2026-01-16",
+            "location": "TTaj Lands End, Mumbai",
+            "price": 1500,
+            "tags": ["Leadership", "Talks"],
+            "image": "/images/event-12.jpg"
+    }
+
 ]

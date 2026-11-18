@@ -7,7 +7,7 @@ const events = eventsData as EventItem[]
 export default function App() {
   return (
     <main className='p-8'>
-      <div className='grid max-w-3xl grid-cols-2 gap-6'>
+      <div className='grid max-w-7xl mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
         {events.map((e) => (
           <EventCard key={e.id} event={e} />
         ))}
