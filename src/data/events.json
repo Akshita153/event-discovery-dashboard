@@ -4,7 +4,7 @@
     "title": "Street Food Night Market",
     "category": "Food",
     "date": "2026-11-20",
-    "location": "F.C Road,Pune",
+    "location": "F.C Road, Pune",
     "price": 0,
     "tags": ["Free", "Social"],
     "image": "/images/event-1.jpg"
@@ -14,7 +14,7 @@
     "title": "Neon Pulse: Midnight Synthwave",
     "category": "Music",
     "date": "2026-11-27",
-    "location": "Powai,Mumbai",
+    "location": "Powai, Mumbai",
     "price": 1499,
     "tags": ["Live", "Night"],
     "image": "/images/event-2.jpg"
@@ -51,7 +51,7 @@
     },
     {
             "id": 6,
-            "title": "Colour & Canvas Open Studio'",
+            "title": "Colour & Canvas Open Studio",
             "category": "Art",
             "date": "2026-12-02",
             "location": "Kala Ghoda, Mumbai",
@@ -114,7 +114,7 @@
             "title": "Product Leaders Roundtable",
             "category": "Tech",
             "date": "2026-01-16",
-            "location": "TTaj Lands End, Mumbai",
+            "location": "Taj Lands End, Mumbai",
             "price": 1500,
             "tags": ["Leadership", "Talks"],
             "image": "/images/event-12.jpg"

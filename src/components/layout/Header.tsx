@@ -4,12 +4,14 @@ import Logo from './Logo'
 type Props = {
   query: string
   onQueryChange: (value: string) => void
+  savedCount: number
+  onOpenSaved: () => void
 }
 
 const iconButton =
   'grid size-11 place-items-center rounded-full border border-ink/10 bg-card focus-visible:ring-2 focus-visible:ring-brand'
 
-export default function Header({ query, onQueryChange }: Props) {
+export default function Header({ query, onQueryChange, savedCount, onOpenSaved }: Props) {
   return (
     <header className='sticky top-0 z-30 border-b border-ink/10 bg-paper/80 backdrop-blur'>
       <div className='mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6'>
@@ -35,10 +37,20 @@ export default function Header({ query, onQueryChange }: Props) {
         </div>
 
         <div className='flex gap-2'>
-          <button type='button' aria-label='Saved events' className={iconButton}>
+          <button
+            type='button'
+            aria-label={`Saved events (${savedCount})`}
+            onClick={onOpenSaved}
+            className={`${iconButton} relative cursor-pointer`}
+          >
             <Heart size={20} />
+            {savedCount > 0 && (
+              <span className='absolute -right-1 -top-1 grid size-5 place-items-center rounded-full bg-brand text-xs text-white'>
+                {savedCount}
+              </span>
+            )}
           </button>
-          <button type='button' aria-label='Toggle theme' className={iconButton}>
+          <button type='button' aria-label='Toggle theme' className={`${iconButton} cursor-pointer`}>
             <Moon size={20} />
           </button>
         </div>
