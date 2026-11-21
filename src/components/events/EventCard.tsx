@@ -18,7 +18,7 @@ export default function EventCard({ event, saved = false, onToggleSave }: Props)
         <img src={event.image} alt={event.title} className='h-full w-full object-cover' />
         <div className='absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-black/60 to-transparent' />
 
-        <span className='absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-ink'>
+        <span className='absolute left-3 top-3 rounded-full bg-card/90 px-3 py-1 text-xs font-medium text-ink'>
           {event.category}
         </span>
 
@@ -27,14 +27,14 @@ export default function EventCard({ event, saved = false, onToggleSave }: Props)
           aria-label={saved ? `Remove ${event.title} from saved` : `Save ${event.title}`}
           aria-pressed={saved}
           onClick={() => onToggleSave?.(event.id)}
-          className='absolute right-3 top-3 grid size-10 place-items-center rounded-full bg-white/90 text-ink focus-visible:ring-2 focus-visible:ring-brand'
+          className='absolute right-3 top-3 grid size-10 place-items-center rounded-full bg-card/90 text-ink focus-visible:ring-2 focus-visible:ring-brand'
         >
           <Heart size={20} fill={saved ? 'currentColor' : 'none'} />
         </button>
 
         <span
           className={`absolute bottom-3 left-3 rounded-full px-3 py-1 text-sm font-semibold ${
-            isFree ? 'bg-lime text-ink' : 'text-white'
+            isFree ? 'bg-lime text-on-lime' : 'text-white'
           }`}
         >
           {formatPrice(event.price)}

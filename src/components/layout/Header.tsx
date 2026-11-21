@@ -1,4 +1,5 @@
-import { Heart, Moon, Search } from 'lucide-react'
+import { Heart, Moon, Search, Sun } from 'lucide-react'
+import type { Theme } from '../../hooks/useTheme'
 import Logo from './Logo'
 
 type Props = {
@@ -6,12 +7,14 @@ type Props = {
   onQueryChange: (value: string) => void
   savedCount: number
   onOpenSaved: () => void
+  theme: Theme
+  onToggleTheme: () => void
 }
 
 const iconButton =
   'grid size-11 place-items-center rounded-full border border-ink/10 bg-card focus-visible:ring-2 focus-visible:ring-brand'
 
-export default function Header({ query, onQueryChange, savedCount, onOpenSaved }: Props) {
+export default function Header({ query, onQueryChange, savedCount, onOpenSaved, theme, onToggleTheme }: Props) {
   return (
     <header className='sticky top-0 z-30 border-b border-ink/10 bg-paper/80 backdrop-blur'>
       <div className='mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6'>
@@ -50,8 +53,13 @@ export default function Header({ query, onQueryChange, savedCount, onOpenSaved }
               </span>
             )}
           </button>
-          <button type='button' aria-label='Toggle theme' className={`${iconButton} cursor-pointer`}>
-            <Moon size={20} />
+          <button
+            type='button'
+            aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+            onClick={onToggleTheme}
+            className={iconButton}
+          >
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           </button>
         </div>
       </div>

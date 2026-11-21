@@ -9,10 +9,25 @@
   --color-lime: #c4ec54;
   --color-paper: #f8f8f2;
   --color-card: #fdfdf9;
+  --color-on-lime: #0b1f12;
+}
+
+:root.dark {
+  color-scheme: dark;
+  --color-ink: #eef3ea;
+  --color-paper: #0b1410;
+  --color-card: #131f19;
+  --color-brand: #15803d;
 }
 
 body {
   font-family: var(--font-body);
   background: var(--color-paper);
   color: var(--color-ink);
+}
+
+/* added for a moment while switching theme, so colours fade instead of snapping */
+.theme-transition,
+.theme-transition * {
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
 }

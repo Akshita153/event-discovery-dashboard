@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Trash2, X } from 'lucide-react'
 import type { EventItem } from '../../types/event'
 import { formatDate, formatPrice } from '../../lib/format'
+import EmptyState from '../ui/EmptyState'
 
 type Props = {
   events: EventItem[]
@@ -12,15 +13,14 @@ type Props = {
 export default function SavedDrawer({ events, onClose, onRemove }: Props) {
   const closeRef = useRef<HTMLButtonElement>(null)
 
-  // On open: remember what was focused, move focus into the drawer.
-  // On close: give focus back.
+
   useEffect(() => {
     const opener = document.activeElement as HTMLElement | null
     closeRef.current?.focus()
     return () => opener?.focus()
   }, [])
 
-  // Escape key closes it
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
@@ -31,7 +31,7 @@ export default function SavedDrawer({ events, onClose, onRemove }: Props) {
 
   return (
     <>
-      <div className='fixed inset-0 z-40 bg-ink/40' onClick={onClose} aria-hidden='true' />
+      <div className='fixed inset-0 z-40 bg-black/50' onClick={onClose} aria-hidden='true' />
 
       <div
         role='dialog'
@@ -53,9 +53,7 @@ export default function SavedDrawer({ events, onClose, onRemove }: Props) {
         </div>
 
         {events.length === 0 ? (
-          <p className='p-8 text-center text-ink/60'>
-            Nothing saved yet. Tap the heart on an event to keep it here.
-          </p>
+          <EmptyState title='Nothing saved yet' message='Tap the heart on an event to keep it here.' />
         ) : (
           <ul className='flex-1 space-y-4 overflow-y-auto p-5'>
             {events.map((e) => (

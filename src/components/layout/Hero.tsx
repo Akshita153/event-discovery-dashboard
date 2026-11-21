@@ -15,7 +15,7 @@ export default function Hero() {
         </p>
         <a
           href='#events'
-          className='mt-8 inline-flex items-center gap-2 rounded-full bg-lime px-6 py-3 font-medium text-ink focus-visible:ring-2 focus-visible:ring-brand'
+          className='mt-8 inline-flex items-center gap-2 rounded-full bg-lime px-6 py-3 font-medium text-on-lime focus-visible:ring-2 focus-visible:ring-brand'
         >
           Explore events
           <ArrowDown size={18} aria-hidden='true' />
