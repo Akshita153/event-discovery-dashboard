@@ -3,6 +3,7 @@ import { Trash2, X } from 'lucide-react'
 import type { EventItem } from '../../types/event'
 import { formatDate, formatPrice } from '../../lib/format'
 import EmptyState from '../ui/EmptyState'
+import { motion } from 'framer-motion'
 
 type Props = {
   events: EventItem[]
@@ -31,13 +32,24 @@ export default function SavedDrawer({ events, onClose, onRemove }: Props) {
 
   return (
     <>
-      <div className='fixed inset-0 z-40 bg-black/50' onClick={onClose} aria-hidden='true' />
+      <motion.div
+         className='fixed inset-0 z-40 bg-black/50'
+      onClick={onClose}
+      aria-hidden='true'
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      />
 
-      <div
-        role='dialog'
-        aria-modal='true'
-        aria-label='Saved events'
-        className='fixed right-0 top-0 z-50 flex h-full w-full max-w-md flex-col bg-paper shadow-2xl'
+      <motion.div
+       role='dialog'
+      aria-modal='true'
+      aria-label='Saved events'
+      className='fixed right-0 top-0 z-50 flex h-full w-full max-w-md flex-col bg-paper shadow-2xl'
+      initial={{ x: '100%' }}
+      animate={{ x: 0 }}
+      exit={{ x: '100%' }}
+      transition={{ type: 'tween', duration: 0.3, ease: 'easeOut' }}
       >
         <div className='flex items-center justify-between border-b border-ink/10 p-5'>
           <h2 className='font-display text-2xl font-bold'>Saved events</h2>
@@ -78,7 +90,7 @@ export default function SavedDrawer({ events, onClose, onRemove }: Props) {
             ))}
           </ul>
         )}
-      </div>
+      </motion.div>
     </>
   )
 }

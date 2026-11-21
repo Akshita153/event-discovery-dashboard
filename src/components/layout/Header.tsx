@@ -1,6 +1,7 @@
 import { Heart, Moon, Search, Sun } from 'lucide-react'
 import type { Theme } from '../../hooks/useTheme'
 import Logo from './Logo'
+import { motion } from 'framer-motion'
 
 type Props = {
   query: string
@@ -16,7 +17,13 @@ const iconButton =
 
 export default function Header({ query, onQueryChange, savedCount, onOpenSaved, theme, onToggleTheme }: Props) {
   return (
-    <header className='sticky top-0 z-30 border-b border-ink/10 bg-paper/80 backdrop-blur'>
+    <motion.header
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      className='sticky top-0 z-30 border-b border-ink/10 bg-paper/80 backdrop-blur'
+    >
+
       <div className='mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6'>
         <Logo />
 
@@ -63,6 +70,6 @@ export default function Header({ query, onQueryChange, savedCount, onOpenSaved, 
           </button>
         </div>
       </div>
-    </header>
+    </motion.header>
   )
 }

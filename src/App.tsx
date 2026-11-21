@@ -10,6 +10,7 @@ import Filters from './components/events/Filters'
 import EventGrid from './components/events/EventGrid'
 import SavedDrawer from './components/events/SavedDrawer'
 import EmptyState from './components/ui/EmptyState'
+import { AnimatePresence } from 'framer-motion'
 
 const events = eventsData as EventItem[]
 
@@ -72,13 +73,15 @@ export default function App() {
         </section>
       </main>
 
-      {drawerOpen && (
-        <SavedDrawer
-          events={savedEvents}
-          onClose={() => setDrawerOpen(false)}
-          onRemove={toggleSave}
-        />
-      )}
+      <AnimatePresence>
+  {drawerOpen && (
+    <SavedDrawer
+      events={savedEvents}
+      onClose={() => setDrawerOpen(false)}
+      onRemove={toggleSave}
+    />
+  )}
+</AnimatePresence>
     </>
   )
 }
