@@ -15,7 +15,7 @@ export default function HowItWorks() {
         variants={stagger}
         initial='hidden'
         whileInView='show'
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
         <motion.h2 id='how-title' variants={fadeUp} className='font-display text-3xl font-bold'>
           How it works
@@ -26,9 +26,10 @@ export default function HowItWorks() {
             <motion.li
               key={title}
               variants={fadeUp}
-              className='rounded-3xl bg-card p-6 ring-1 ring-ink/5'
+              whileHover={{ y: -6 }}
+              className='group rounded-3xl bg-card p-6 ring-1 ring-ink/5 transition-shadow hover:shadow-lg'
             >
-              <span className='grid size-12 place-items-center rounded-2xl bg-lime text-on-lime'>
+             <span className='grid size-12 place-items-center rounded-2xl bg-lime text-on-lime transition-transform group-hover:scale-110'>
                 <Icon size={22} aria-hidden='true' />
               </span>
               <h3 className='mt-4 font-display text-xl font-semibold'>

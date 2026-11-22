@@ -36,7 +36,7 @@ export default function App() {
 
       <main id='top'>
         <Hero />
-
+        
         <HowItWorks />
 
         <section id='events' className='mx-auto max-w-7xl scroll-mt-20 px-4 pb-20 sm:px-6'>
@@ -77,14 +77,14 @@ export default function App() {
       </main>
 
       <AnimatePresence>
-  {drawerOpen && (
-    <SavedDrawer
-      events={savedEvents}
-      onClose={() => setDrawerOpen(false)}
-      onRemove={toggleSave}
-    />
-  )}
-</AnimatePresence>
+        {drawerOpen && (
+          <SavedDrawer
+            events={savedEvents}
+            onClose={() => setDrawerOpen(false)}
+            onRemove={toggleSave}
+          />
+        )}
+      </AnimatePresence>
     </>
   )
 }
