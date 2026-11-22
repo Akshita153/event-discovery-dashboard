@@ -1,7 +1,8 @@
+import type { FormEvent } from 'react'
+import { motion } from 'framer-motion'
 import { Heart, Moon, Search, Sun } from 'lucide-react'
 import type { Theme } from '../../hooks/useTheme'
 import Logo from './Logo'
-import { motion } from 'framer-motion'
 
 type Props = {
   query: string
@@ -15,7 +16,20 @@ type Props = {
 const iconButton =
   'grid size-11 place-items-center rounded-full border border-ink/10 bg-card focus-visible:ring-2 focus-visible:ring-brand'
 
-export default function Header({ query, onQueryChange, savedCount, onOpenSaved, theme, onToggleTheme }: Props) {
+export default function Header({
+  query,
+  onQueryChange,
+  savedCount,
+  onOpenSaved,
+  theme,
+  onToggleTheme,
+}: Props) {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' })
+    ;(document.activeElement as HTMLElement | null)?.blur()
+  }
+
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
@@ -23,11 +37,10 @@ export default function Header({ query, onQueryChange, savedCount, onOpenSaved, 
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className='sticky top-0 z-30 border-b border-ink/10 bg-paper/80 backdrop-blur'
     >
-
-      <div className='mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6'>
+      <div className='mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6'>
         <Logo />
 
-        <div className='relative max-w-md flex-1'>
+        <form role='search' onSubmit={handleSubmit} className='relative max-w-md flex-1'>
           <label htmlFor='search' className='sr-only'>
             Search events
           </label>
@@ -44,7 +57,7 @@ export default function Header({ query, onQueryChange, savedCount, onOpenSaved, 
             placeholder='Search events...'
             className='w-full rounded-full border border-ink/10 bg-card py-2.5 pl-11 pr-4 text-sm outline-none focus-visible:ring-2 focus-visible:ring-brand'
           />
-        </div>
+        </form>
 
         <div className='flex gap-2'>
           <button
@@ -60,6 +73,7 @@ export default function Header({ query, onQueryChange, savedCount, onOpenSaved, 
               </span>
             )}
           </button>
+
           <button
             type='button'
             aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
