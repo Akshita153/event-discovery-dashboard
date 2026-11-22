@@ -11,6 +11,7 @@ import EventGrid from './components/events/EventGrid'
 import SavedDrawer from './components/events/SavedDrawer'
 import EmptyState from './components/ui/EmptyState'
 import { AnimatePresence } from 'framer-motion'
+import HowItWorks from './components/layout/HowItWorks'
 
 const events = eventsData as EventItem[]
 
@@ -35,6 +36,8 @@ export default function App() {
 
       <main id='top'>
         <Hero />
+
+        <HowItWorks />
 
         <section id='events' className='mx-auto max-w-7xl scroll-mt-20 px-4 pb-20 sm:px-6'>
           <h2 className='mt-5 font-display text-4xl font-bold'>Upcoming events</h2>
