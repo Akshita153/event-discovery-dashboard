@@ -41,19 +41,31 @@ export default function Filters({ filters, months, priceLimit, onChange, onReset
           <label htmlFor='month' className={labelStyle}>
             Date
           </label>
-          <select
-            id='month'
-            value={filters.month}
-            onChange={(e) => onChange({ month: e.target.value })}
-            className='mt-3 w-full rounded-full border border-ink/10 bg-card px-4 py-3 text-sm focus-visible:ring-2 focus-visible:ring-brand'
-          >
-            <option value='any'>Any date</option>
-            {months.map((m) => (
-              <option key={m} value={m}>
-                {formatMonth(m)}
-              </option>
-            ))}
-          </select>
+          <div className='relative mt-3'>
+            <select
+              id='month'
+              value={filters.month}
+              onChange={(e) => onChange({ month: e.target.value })}
+              className='w-full appearance-none rounded-full border border-ink/10 bg-card py-3 pl-4 pr-10 text-sm focus-visible:ring-2 focus-visible:ring-brand'
+            >
+              <option value='any'>Any date</option>
+              {months.map((m) => (
+                <option key={m} value={m}>
+                  {formatMonth(m)}
+                </option>
+              ))}
+            </select>
+            <svg
+              aria-hidden='true'
+              viewBox='0 0 20 20'
+              fill='none'
+              stroke='currentColor'
+              strokeWidth='1.75'
+              className='pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-ink/60'
+            >
+              <path strokeLinecap='round' strokeLinejoin='round' d='M6 8l4 4 4-4' />
+            </svg>
+          </div>
         </div>
 
         <div>

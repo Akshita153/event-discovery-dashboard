@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import type { EventItem } from '../../types/event'
 import EventCard from './EventCard'
+import TiltCard from '../ui/TiltCard'
 
 type Props = {
   events: EventItem[]
@@ -26,11 +27,13 @@ export default function EventGrid({ events, savedIds, onToggleSave }: Props) {
               delay: (index % 4) * 0.08,
             }}
           >
-            <EventCard
-              event={e}
-              saved={savedIds.includes(e.id)}
-              onToggleSave={onToggleSave}
-            />
+            <TiltCard>
+              <EventCard
+                event={e}
+                saved={savedIds.includes(e.id)}
+                onToggleSave={onToggleSave}
+              />
+            </TiltCard>
           </motion.li>
         ))}
       </AnimatePresence>
