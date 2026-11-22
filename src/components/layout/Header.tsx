@@ -64,7 +64,7 @@ export default function Header({ query, onQueryChange, savedCount, onOpenSaved, 
             type='button'
             aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
             onClick={onToggleTheme}
-            className={iconButton}
+            className={`${iconButton} relative cursor-pointer`}
           >
             {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           </button>
