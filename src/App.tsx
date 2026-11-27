@@ -21,6 +21,8 @@ export default function App() {
   const { theme, toggleTheme } = useTheme()
   const [drawerOpen, setDrawerOpen] = useState(false)
 
+
+
   const savedEvents = events.filter((e) => savedIds.includes(e.id))
 
   return (

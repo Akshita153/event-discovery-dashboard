@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import {useState, useEffect, useRef } from 'react'
 import { Trash2, X } from 'lucide-react'
 import type { EventItem } from '../../types/event'
 import { formatDate, formatPrice } from '../../lib/format'
@@ -12,7 +12,10 @@ type Props = {
 }
 
 export default function SavedDrawer({ events, onClose, onRemove }: Props) {
+
+  const [eventToRemove, setEventToRemove] = useState<EventItem | null>(null)
   const closeRef = useRef<HTMLButtonElement>(null)
+
 
 
   useEffect(() => {
@@ -81,7 +84,7 @@ export default function SavedDrawer({ events, onClose, onRemove }: Props) {
                 <button
                   type='button'
                   aria-label={`Remove ${e.title} from saved`}
-                  onClick={() => onRemove(e.id)}
+                  onClick={() => setEventToRemove(e)}
                   className='self-start rounded-full p-2 hover:bg-ink/5 focus-visible:ring-2 focus-visible:ring-brand'
                 >
                   <Trash2 size={18} />
@@ -90,7 +93,47 @@ export default function SavedDrawer({ events, onClose, onRemove }: Props) {
             ))}
           </ul>
         )}
+          {eventToRemove && (
+  <div
+    role="alertdialog"
+    aria-modal="true"
+    aria-labelledby="delete-title"
+    className="fixed inset-0 z-[60] grid place-items-center bg-black/50 p-4"
+  >
+    <div className="w-full max-w-sm rounded-2xl bg-paper p-6 shadow-xl">
+      <h4 id="delete-title" className="font-semibold">
+        Do you want to delete this event?
+      </h4>
+
+      <p className="mt-2 text-sm text-ink/60">
+        {eventToRemove.title}
+      </p>
+
+      <div className="mt-5 flex justify-end gap-3">
+        <button
+          type="button"
+          onClick={() => setEventToRemove(null)}
+          className="rounded-full px-4 py-2"
+        >
+          Cancel
+        </button>
+
+        <button
+          type="button"
+          onClick={() => {
+            onRemove(eventToRemove.id)
+            setEventToRemove(null)
+          }}
+          className="rounded-full bg-brand px-4 py-2 text-white"
+        >
+          Yes, delete
+        </button>
+      </div>
+    </div>
+  </div>
+)}
       </motion.div>
     </>
   )
 }
+
